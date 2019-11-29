@@ -1,0 +1,13 @@
+---
+- hosts: nebula1
+  become: yes
+  become_user: oneadmin
+  tasks:
+    - name: create a vm
+      one_vm:
+        template_id: 5
+        disk_size: 2 GB
+        memory: 512 MB
+        vcpu: 1
+        count: 1
+        state: running
